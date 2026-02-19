@@ -1,0 +1,64 @@
+.gallery img {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  z-index: 10;
+  transform: scale(1.01);
+}
+
+/* For adjusting the overlay color */
+.goverlay {
+  background: white;
+}
+
+/* For adjusting button background */
+.glightbox-container .gbtn {
+  background-color: inherit;
+}
+
+/* For adjusting the buttons background on hover */
+.glightbox-container .gbtn:hover {
+  background-color: rgb(228, 228, 228);
+  border: solid var(--page_border_thickness) var(--page_border_color);
+}
+
+/* For adding extra padding to the buttons */
+/* .glightbox-container .gprev, .glightbox-container .gnext, .glightbox-container .gclose{
+    padding: 20px;
+} */
+
+/* For adjusting size of buttons */
+/* .glightbox-container .gclose{
+    width: 30px;
+    height: auto;
+}
+.glightbox-container .gprev, .glightbox-container .gnext{
+    width: 30px;
+    height: auto;
+}
+.glightbox-container .gprev svg, .glightbox-container .gnext svg, .glightbox-container .gclose svg{
+    width: inherit;
+    height: inherit;
+} */
+
+/* For adjusting fill color of buttons, still WIP */
+.glightbox-container .gclose svg > *,
+.glightbox-container .gprev svg > *,
+.glightbox-container .gnext svg > * {
+  fill: none;
+  stroke: black;
+}
+
+.glightbox-container .gclose:hover svg > *,
+.glightbox-container .gprev:hover svg > *,
+.glightbox-container .gnext:hover svg > * {
+  fill: none;
+  stroke: black;
+}
+
+.glightbox-clean .gslide-media {
+  box-shadow: none;
+  border: solid 0.2px rgb(240, 240, 240);
+}

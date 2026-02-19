@@ -1,0 +1,128 @@
+.nested-about {
+  position: relative;
+  height: fit-content;
+}
+
+/* .nested-about_category {
+} */
+
+.nested-about_item {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+  margin-block-end: 3rem;
+  margin-inline: auto;
+}
+
+.nested-about span:has(p) {
+  padding-block-start: 1rem;
+}
+
+.nested-about_item img {
+  aspect-ratio: 16 / 10;
+  max-width: 20rem;
+  object-fit: cover;
+}
+
+.nested-about_item p {
+  margin-inline-end: 3rem;
+}
+
+/* Nested-About Section Title Decoration */
+/* 
+Auto detects first header in nested-about
+svg should have no set width or height and preserveAspectRatio="xMaxYMid slice" set
+*/
+
+.nested-about > h1:first-child,
+.nested-about > h2:first-child,
+.nested-about > h3:first-child,
+.nested-about > h4:first-child,
+.nested-about > h5:first-child,
+.nested-about > h6:first-child {
+  background-color: white;
+  padding-inline-end: 1rem;
+  margin-block-end: 2rem;
+  width: fit-content;
+}
+
+.nested-about > h1:first-child::after,
+.nested-about > h2:first-child::after,
+.nested-about > h3:first-child::after,
+.nested-about > h4:first-child::after,
+.nested-about > h5:first-child::after,
+.nested-about > h6:first-child::after {
+  content: "";
+  background-image: url(../../assets/vectortest.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top right;
+  position: absolute;
+  z-index: -1;
+  /* Font size - half of line height */
+  top: calc(1em - (((1em * 1.5) - 1em) / 2));
+  right: 0;
+  width: auto;
+  width: 100%;
+  height: 843px;
+}
+
+/* Image decorations */
+.nested-about :has(> img) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nested-about :has(> img)::before {
+  content: "";
+  margin-inline-end: 1.5rem;
+  display: inline-block;
+  border-bottom: solid 2px black;
+  width: 2.5rem;
+  vertical-align: middle;
+  background-color: black;
+}
+
+@media (max-width: 900px) {
+  .nested-about :has(> img)::before {
+    display: none;
+  }
+
+  .nested-about_item {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .nested-about > h1:first-child,
+  .nested-about > h2:first-child,
+  .nested-about > h3:first-child,
+  .nested-about > h4:first-child,
+  .nested-about > h5:first-child,
+  .nested-about > h6:first-child {
+    margin-block-end: 1rem;
+  }
+
+  .nested-about > h1:first-child::after,
+  .nested-about > h2:first-child::after,
+  .nested-about > h3:first-child::after,
+  .nested-about > h4:first-child::after,
+  .nested-about > h5:first-child::after,
+  .nested-about > h6:first-child::after {
+    content: "";
+    background-image: none;
+    position: absolute;
+    z-index: -1;
+    top: calc(1em - (((1em * 1.5) - 1em) / 2));
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+  }
+
+  .nested-about_item img {
+    max-width: 15rem;
+  }
+}

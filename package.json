@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "glightbox": "^3.3.1",
+    "macy": "^2.5.1"
+  }
+}

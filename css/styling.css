@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grandiflora+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Young+Serif&display=swap");
+
+*:focus-visible {
+  outline-color: var(--page_outline_color);
+}
+
+body {
+  font-family: Manrope;
+}
+
+h1 {
+  font-family: "Grandiflora One";
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 250;
+  letter-spacing: 0.2rem;
+
+  --decoration-width: 2.25rem;
+  --decoration-spacing: 1rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-weight: 300;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--page_color--hover);
+}
+
+#header {
+  border-block-end: solid var(--page_border_thickness) var(--page_border_color);
+}
+
+#sidebar {
+  border-inline-end: solid var(--page_border_thickness) var(--page_border_color);
+}
+
+#footer {
+  border-block-start: solid var(--page_border_thickness)
+    var(--page_border_color);
+}
+
+/* Header styling */
+#nav--mobile {
+  background-color: var(--page_background_color);
+  border-block-end: solid var(--page_border_thickness) var(--page_border_color);
+}
+
+.nav--mobile_top {
+  border-inline-end: solid var(--page_border_thickness) var(--page_border_color);
+}
+
+.nav--mobile_bottom {
+  border-block-start: solid var(--page_border_thickness)
+    var(--page_border_color);
+}
+
+#header-links {
+  list-style: none;
+}
+
+.header-link {
+  color: var(--page_color);
+  text-decoration: none;
+}
+
+#header-links li:hover a {
+  color: var(--page_color--hover);
+}
+
+#header-links li:not(:last-child) {
+  border-bottom: solid var(--page_border_thickness) var(--page_border_color);
+}
+
+.header-link::before {
+  border-bottom: solid 1px var(--page_border_color);
+}
+
+.header-link::after {
+  border-bottom: solid 1px var(--page_color);
+}
+
+#header-links li:hover {
+  color: var(--page_color--hover);
+}
+
+#header-links li:hover a::before,
+#header-links li:hover a::after {
+  border-color: var(--page_color--hover);
+}
+
+/* Sidebar styling */
+#sidebar h2 {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-transform: uppercase;
+  font-family: "Grandiflora One";
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/* Footer */
+#back-to-top {
+  text-decoration: none;
+  color: var(--page_color);
+}
+
+#back-to-top:hover {
+  color: var(--page_color--hover);
+}
