@@ -67,7 +67,6 @@ form *::placeholder {
 
 @media (max-width: 450px) {
   .contact {
-    margin-block-start: 1.5rem;
     padding-inline: 1rem;
   }
   .contact form {

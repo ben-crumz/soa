@@ -1,10 +1,9 @@
 @import url(css/reset.css);
 @import url(css/layout.css);
 @import url(css/styling.css);
-@import url(css/altStyling.css);
 
 /* Components */
-@import url(node_modules/glightbox/dist/css/glightbox.min.css);
+@import url(css/glightbox.min.css);
 @import url(css/components/gallery.css);
 @import url(css/components/about-section.css);
 @import url(css/components/nested-about.css);
