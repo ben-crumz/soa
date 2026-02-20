@@ -22,7 +22,21 @@
 
   --page_transtion_speed: 3s;
 
-  --mobile-nav_transition_speed: 0.5s;
+  --mobile-nav_transition_speed: 0.3s;
+}
+
+/* Click devices */
+@media (hover: hover) and (pointer: fine) {
+  :root {
+    --mobile-nav_transition_speed: 0.6s;
+  }
+}
+
+/* Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+  :root {
+    --mobile-nav_transition_speed: 0.2s;
+  }
 }
 
 /* Universal stylings */
