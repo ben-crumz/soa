@@ -46,10 +46,10 @@ const observer = new IntersectionObserver(
       const img = entry.target;
       const src = img.dataset.src;
 
-      // Test when images are intersecting
-      if (entry.isIntersecting) {
-        console.log("Loading image:", entry.target.dataset.src);
-      }
+      // // Test when images are intersecting
+      // if (entry.isIntersecting) {
+      //   console.log("Loading image:", entry.target.dataset.src);
+      // }
 
       if (!src) return;
 
