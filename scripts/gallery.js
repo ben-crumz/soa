@@ -1,6 +1,8 @@
 var macyInstance = Macy({
   container: ".gallery",
   columns: "4",
+  trueOrder: false,
+  waitForImages: false,
   margin: {
     x: 10,
     y: 10,
@@ -33,6 +35,44 @@ const lightbox = GLightbox({
     next: '<svg xmlns="http://www.w3.org/2000/svg" width="29" height="55" viewBox="0 0 29 55" fill="none"><path d="M1.25 53.25L27.25 27.25L1.25 1.25" stroke="#120000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   },
 });
+
+const lazyImages = document.querySelectorAll("img.lazy");
+
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      const img = entry.target;
+      const src = img.dataset.src;
+
+      // Test when images are intersecting
+      if (entry.isIntersecting) {
+        console.log("Loading image:", entry.target.dataset.src);
+      }
+
+      if (!src) return;
+
+      img.src = src;
+      img.removeAttribute("data-src");
+      img.classList.remove("lazy");
+
+      img.removeAttribute("height");
+
+      img.onload = () => {
+        macyInstance.recalculate(true);
+      };
+
+      observer.unobserve(img);
+    });
+  },
+  {
+    rootMargin: "200px",
+    threshold: 0.01,
+  },
+);
+
+lazyImages.forEach((img) => observer.observe(img));
 
 // function handleMouseWheel(e) {
 //   e.preventDefault();
