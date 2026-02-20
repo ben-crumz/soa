@@ -28,6 +28,8 @@ const lightbox = GLightbox({
   zoomable: false, // optional zoom on image
   height: "100vh", // image stretches to viewport height
   width: "auto", // maintain aspect ratio
+  slideEffect: "fade",
+  openEffect: "fade",
   svg: {
     close:
       '<svg xmlns="http://www.w3.org/2000/svg" width="46" height="45" viewBox="0 0 46 45" fill="none"><line x1="0.883939" y1="43.162" x2="43.0768" y2="0.969131" stroke="#120000" stroke-width="2.5"/><line x1="2.38437" y1="0.883695" x2="44.5773" y2="43.0766" stroke="#120000" stroke-width="2.5"/></svg>',
@@ -36,6 +38,31 @@ const lightbox = GLightbox({
   },
 });
 
+// function handleMouseWheel(e) {
+//   e.preventDefault();
+
+//   const delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail));
+
+//   if (delta < 0) {
+//     lightbox.nextSlide();
+//   } else {
+//     lightbox.prevSlide();
+//   }
+// }
+
+// lightbox.on("open", () => {
+//   window.addEventListener("wheel", handleMouseWheel);
+//   window.addEventListener("mousewheel", handleMouseWheel);
+// });
+
+// lightbox.on("close", () => {
+//   window.removeEventListener("wheel", handleMouseWheel);
+//   window.removeEventListener("mousewheel", handleMouseWheel, {
+//     passive: false,
+//   });
+// });
+
+// Start lazyloader
 const lazyImages = document.querySelectorAll("img.lazy");
 
 const observer = new IntersectionObserver(
@@ -73,25 +100,4 @@ const observer = new IntersectionObserver(
 );
 
 lazyImages.forEach((img) => observer.observe(img));
-
-// function handleMouseWheel(e) {
-//   e.preventDefault();
-
-//   const delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail));
-
-//   if (delta < 0) {
-//     lightbox.nextSlide();
-//   } else {
-//     lightbox.prevSlide();
-//   }
-// }
-
-// lightbox.on("open", () => {
-//   window.addEventListener("wheel", handleMouseWheel, { passive: false });
-//   window.addEventListener("mousewheel", handleMouseWheel, { passive: false });
-// });
-
-// lightbox.on("close", () => {
-//   window.addEventListener("wheel", handleMouseWheel, { passive: false });
-//   window.addEventListener("mousewheel", handleMouseWheel, { passive: false });
-// });
+// End lazyloader
