@@ -12,6 +12,8 @@ function openNav() {
     mobileNav.classList.add("is-open");
     backDrop.classList.add("is-open");
   });
+
+  setFocusTrap();
 }
 
 function closeNav() {
@@ -42,3 +44,57 @@ navOpen.addEventListener("click", openNav);
 window.addEventListener("resize", closeNav);
 navClose.addEventListener("click", closeNav);
 backDrop.addEventListener("click", closeNav);
+
+const focusableTags =
+  'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])';
+
+function setFocusTrap() {
+  console.log("test");
+
+  let focusableElements = Array.from(mobileNav.querySelectorAll(focusableTags));
+  let currentIndex = 0;
+  let arrayLast = focusableElements.length - 1;
+
+  focusableElements[currentIndex].focus();
+
+  mobileNav.addEventListener("keydown", (e) => {
+    let keyPressed = e.key;
+
+    if (keyPressed === "ArrowUp" || (e.shiftKey && keyPressed === "Tab")) {
+      e.preventDefault();
+
+      if (currentIndex == 0) {
+        currentIndex = arrayLast;
+        focusableElements[currentIndex].focus();
+      } else {
+        currentIndex = currentIndex - 1;
+        focusableElements[currentIndex].focus();
+      }
+      /*console.log(currentIndex);*/
+    }
+
+    if (keyPressed === "ArrowDown" || (!e.shiftKey && keyPressed === "Tab")) {
+      e.preventDefault();
+
+      if (currentIndex == arrayLast) {
+        currentIndex = 0;
+        focusableElements[currentIndex].focus();
+      } else {
+        currentIndex = currentIndex + 1;
+        focusableElements[currentIndex].focus();
+      }
+      /*console.log(currentIndex);*/
+    }
+
+    if (keyPressed === "Escape") {
+      e.preventDefault();
+      /*console.log(currentIndex);*/
+      closeNav();
+    }
+
+    if (keyPressed === "Enter") {
+      /*console.log(currentIndex);*/
+      closeNav();
+    }
+  });
+}
