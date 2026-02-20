@@ -9,6 +9,7 @@
 .about-section img {
   max-width: 10rem;
   aspect-ratio: 4/5;
+  object-fit: cover;
 }
 
 /* Desktop stylings */
