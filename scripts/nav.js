@@ -44,8 +44,6 @@ function setFocusTrap() {
   let currentIndex = 0;
   let arrayLast = focusableElements.length - 1;
 
-  focusableElements[currentIndex].focus();
-
   mobileNav.addEventListener("keydown", (e) => {
     let keyPressed = e.key;
 
