@@ -26,6 +26,7 @@
 
 .nested-about_item p {
   margin-inline-end: 3rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
 }
 
 /* Nested-About Section Title Decoration */
@@ -92,6 +93,12 @@ svg should have no set width or height and preserveAspectRatio="xMaxYMid slice" 
   .nested-about_item {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .nested-about_item p {
+    line-height: 1.75;
   }
 }
 

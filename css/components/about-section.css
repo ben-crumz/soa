@@ -12,6 +12,14 @@
   object-fit: cover;
 }
 
+.about-section p {
+  text-align: center;
+  margin-block-start: 1.5rem;
+  max-width: 80%;
+  margin-inline: auto;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+}
+
 /* Desktop stylings */
 .about-section span:has(img),
 .about-section div:has(img) {
@@ -78,5 +86,11 @@
     border-radius: 50%;
     margin-block-end: 2rem;
     margin-inline: auto;
+  }
+
+  .about-section p {
+    margin-block-start: 0;
+    max-width: 100%;
+    line-height: 1.75;
   }
 }
