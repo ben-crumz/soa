@@ -1,23 +1,23 @@
-const navOpen = document.getElementById("mobile-open");
-const navClose = document.getElementById("mobile-close");
 const mobileNav = document.getElementById("nav--mobile");
-const backDrop = document.getElementById("backdrop");
+const mobileOpen = document.getElementById("mobile-open");
+const mobileClose = document.getElementById("mobile-close");
+const backdrop = document.getElementById("backdrop");
+const focusableTags =
+  'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])';
 
 function openNav() {
-  // Toggles mobile nav bar
   mobileNav.classList.add("is-active");
-  backDrop.classList.add("is-active");
+  backdrop.classList.add("is-active");
 
   requestAnimationFrame(() => {
     mobileNav.classList.add("is-open");
-    backDrop.classList.add("is-open");
+    backdrop.classList.add("is-open");
   });
 
   setFocusTrap();
 }
 
 function closeNav() {
-  // Toggles mobile nav bar
   mobileNav.classList.remove("is-open");
 
   mobileNav.addEventListener("transitionend", function handler(e) {
@@ -28,29 +28,18 @@ function closeNav() {
     }
   });
 
-  backDrop.classList.remove("is-open");
+  backdrop.classList.remove("is-open");
 
-  backDrop.addEventListener("transitionend", function handler(e) {
+  backdrop.addEventListener("transitionend", function handler(e) {
     if (e.propertyName === "background-color") {
-      backDrop.classList.remove("is-active");
+      backdrop.classList.remove("is-active");
 
-      backDrop.removeEventListener("transitionend", handler);
+      backdrop.removeEventListener("transitionend", handler);
     }
   });
 }
 
-navOpen.addEventListener("click", openNav);
-
-window.addEventListener("resize", closeNav);
-navClose.addEventListener("click", closeNav);
-backDrop.addEventListener("click", closeNav);
-
-const focusableTags =
-  'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])';
-
 function setFocusTrap() {
-  console.log("test");
-
   let focusableElements = Array.from(mobileNav.querySelectorAll(focusableTags));
   let currentIndex = 0;
   let arrayLast = focusableElements.length - 1;
@@ -98,3 +87,9 @@ function setFocusTrap() {
     }
   });
 }
+
+mobileOpen.addEventListener("click", openNav);
+
+mobileClose.addEventListener("click", closeNav);
+window.addEventListener("resize", closeNav);
+backdrop.addEventListener("click", closeNav);
