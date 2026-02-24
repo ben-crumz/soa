@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Grandiflora+One&family=Manrope:wght@200..800&display=swap");
 
 *:focus-visible {
-  outline-color: var(--page_outline_color);
+  outline: solid 2px red;
 }
 
 body {
@@ -101,25 +101,12 @@ a:hover {
   list-style: none;
 }
 
-.header-link {
-  color: var(--page_color);
-  text-decoration: none;
-}
-
 #header-links li:hover a {
   color: var(--page_color--hover);
 }
 
 #header-links li:not(:last-child) {
   border-bottom: solid var(--page_border_thickness) var(--page_border_color);
-}
-
-.header-link::before {
-  border-bottom: solid 1px var(--page_border_color);
-}
-
-.header-link::after {
-  border-bottom: solid 1px var(--page_color);
 }
 
 #header-links li:hover {
@@ -129,6 +116,19 @@ a:hover {
 #header-links li:hover a::before,
 #header-links li:hover a::after {
   border-color: var(--page_color--hover);
+}
+
+.header-link {
+  color: var(--page_color);
+  text-decoration: none;
+}
+
+.header-link::before {
+  border-bottom: solid 1px var(--page_border_color);
+}
+
+.header-link::after {
+  border-bottom: solid 1px var(--page_color);
 }
 
 /* Footer */
