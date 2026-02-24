@@ -162,16 +162,14 @@ h2 {
 }
 
 /* Sidebar */
-#sidebar {
-  /* padding-block-start: 5rem; */
+#sidebar h2 {
+  display: none;
+  margin-block-end: 0;
+  margin-inline-start: 1.25rem;
+}
 
-  h2 {
-    display: none;
-    margin-block-end: 0;
-  }
-  ul {
-    display: none;
-  }
+#sidebar ul {
+  display: none;
 }
 
 /* Footer */

@@ -186,3 +186,7 @@
   backdrop-filter: blur(2px);
   background-color: rgba(29, 29, 29, 0.548);
 }
+
+.grandiflora-mobile-bold {
+  -webkit-text-stroke: 1px currentColor;
+}
