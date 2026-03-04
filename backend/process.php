@@ -1,5 +1,5 @@
 <?php
-require_once 'db.php';
+require_once '../db.php';
 
 // Get data
 $data = file_get_contents('php://input');
@@ -12,13 +12,12 @@ $dataArray = json_decode($data, true);
 // $message = mysqli_real_escape_string($conn, $dataArray['messageValue']);
 
 $fName = $dataArray['fNameValue'];
-$lName = $dataArray['lNameValue'];
 $phone = $dataArray['phoneValue'];
 $email = $dataArray['emailValue'];
 $message = $dataArray['messageValue'];
 
 // Template
-$sql = "INSERT INTO `contactinquiries`(`first_name`, `last_name`, `phone`, `email`, `message`) VALUES (?, ?, ?, ?, ?)";
+$sql = "INSERT INTO `contactinquiries`(`first_name`, `phone`, `email`, `message`) VALUES (?, ?, ?, ?)";
 
 // Create prepared statement
 $stmt = $conn->prepare($sql);
@@ -29,7 +28,7 @@ if ($stmt === false){
 }
 
 // Bind
-$stmt->bind_param("sssss", $fName, $lName, $phone, $email, $message);
+$stmt->bind_param("ssss", $fName, $phone, $email, $message);
 
 // Execute
 if ($stmt->execute()){
