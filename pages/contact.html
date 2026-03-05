@@ -7,6 +7,7 @@
     <script defer src="../scripts/nav.js"></script>
     <script defer src="../scripts/backToTop-btn.js"></script>
     <script defer src="../scripts/validation.js"></script>
+    <script defer src="../scripts/modalController.js"></script>
   </head>
   <body>
     <div id="container">
@@ -331,8 +332,23 @@
         <div class="footer-nav--desktop"></div>
       </footer>
 
-      <div id="deco-sidebar"></div>
+      <div class="modal" data-modal="msgRecieved">
+        <div class="modal-content">
+          <h2>Thank You</h2>
+          <p>I have recieved your message and will get back to you shortly</p>
+          <button class="btn" data-modal="msgRecieved">Continue</button>
+        </div>
+      </div>
 
+      <div class="modal" data-modal="msgError">
+        <div class="modal-content">
+          <h2>Error</h2>
+          <p>Something went wrong with our system. Please try again later.</p>
+          <button class="btn" data-modal="msgError">Close</button>
+        </div>
+      </div>
+
+      <div id="deco-sidebar"></div>
       <div id="backdrop"></div>
     </div>
   </body>
