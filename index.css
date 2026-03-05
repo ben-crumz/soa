@@ -8,6 +8,7 @@
 @import url(css/components/about-section.css);
 @import url(css/components/nested-about.css);
 @import url(css/components/contact-form.css);
+@import url(css/components/modal.css);
 
 /* Universal variables */
 :root {
@@ -123,7 +124,7 @@
 }
 
 .fancy-title::before {
-  content: "";
+  content: '';
   margin-inline-end: var(--decoration-spacing);
   display: inline-block;
   height: 1px;
@@ -133,7 +134,7 @@
 }
 
 .fancy-title::after {
-  content: "";
+  content: '';
   margin-inline-start: var(--decoration-spacing);
   display: inline-block;
   height: 1px;
