@@ -1,5 +1,5 @@
 <?php
-require_once '../db.php';
+require_once './db.php';
 
 // Get data
 $data = file_get_contents('php://input');
@@ -10,34 +10,34 @@ $dataArray = json_decode($data, true);
 // $phone = mysqli_real_escape_string($conn, $dataArray['phoneValue']);
 // $email = mysqli_real_escape_string($conn, $dataArray['emailValue']);
 // $message = mysqli_real_escape_string($conn, $dataArray['messageValue']);
-
-$fName = $dataArray['fNameValue'];
-$phone = $dataArray['phoneValue'];
-$email = $dataArray['emailValue'];
-$message = $dataArray['messageValue'];
-
 // Template
 $sql = "INSERT INTO `contactinquiries`(`first_name`, `phone`, `email`, `message`) VALUES (?, ?, ?, ?)";
 
-// Create prepared statement
-$stmt = $conn->prepare($sql);
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $fName = $dataArray['fNameValue'];
+    $phone = $dataArray['phoneValue'];
+    $email = $dataArray['emailValue'];
+    $message = $dataArray['messageValue'];
 
-// Check if successful
-if ($stmt === false){
-    die("Error Preparing Statement: " . $conn->error);
+    // Create prepared statement
+    $stmt = $conn->prepare($sql);
+
+    // Check if successful
+    if ($stmt === false){
+        die("Error Preparing Statement: " . $conn->error);
+    }
+
+    // Bind
+    $stmt->bind_param("ssss", $fName, $phone, $email, $message);
+
+    if($stmt->execute()){
+        echo json_encode(["success" => true]);
+    } else {
+        echo json_encode(["success" => false]);
+    }
+
+    // Close
+    $stmt->close();
+    $conn->close();
 }
-
-// Bind
-$stmt->bind_param("ssss", $fName, $phone, $email, $message);
-
-// Execute
-if ($stmt->execute()){
-    // echo "New contact submission succesful.";
-} else {
-    // echo "Error: " . $stmt->error;
-}
-
-// Close
-$stmt->close();
-$conn->close();
 ?>
