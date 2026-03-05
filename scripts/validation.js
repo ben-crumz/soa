@@ -30,19 +30,14 @@ function validateUser(event) {
 
   if (fillableInputFiltered.length > 0) {
     clearForm(form);
-    // console.log('not empty');
   } else {
     validateForm(event);
-    // console.log('empty');
   }
 }
 
 function validateForm(event) {
   const fNameInput = form.elements['f-name'];
   const fNameValue = fNameInput.value.trim();
-
-  // const lNameInput = form.elements["l-name"];
-  // const lNameValue = lNameInput.value.trim();
 
   const emailInput = form.elements['email'];
   const emailValue = emailInput.value.trim();
@@ -55,7 +50,6 @@ function validateForm(event) {
 
   const formData = {
     fNameValue,
-    // lNameValue,
     emailValue,
     phoneValue,
     messageValue,
@@ -111,7 +105,7 @@ function addErrorMessage(errorMessage, errorPosition) {
 function clearForm(form) {
   form.reset();
 }
-
+let submitSuccess;
 function sendData(formData) {
   fetch('../backend/process.php', {
     method: 'POST',
@@ -119,11 +113,15 @@ function sendData(formData) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(formData),
-  }); /*.then(function (response) {
-        return response.text();
-    }).then(function (data) {
-        console.log(data);
-    })*/
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.success) {
+        handleModalOpen('msgRecieved');
+      } else {
+        handleModalOpen('msgError');
+      }
+    });
+
   clearForm(form);
-  // confirmSubmission();
 }
