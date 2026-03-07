@@ -78,11 +78,6 @@ a:hover {
   border-inline-end: solid var(--page_border_thickness) var(--page_border_color);
 }
 
-#footer {
-  border-block-start: solid var(--page_border_thickness)
-    var(--page_border_color);
-}
-
 /* Header styling */
 #nav--mobile {
   background-color: var(--page_background_color);
