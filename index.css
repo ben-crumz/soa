@@ -12,14 +12,14 @@
 
 /* Universal variables */
 :root {
-  --page_color: black;
+  --page_color: #120000;
   --page_color--hover: #cea604;
   --page_background_color: white;
 
   --page_outline_color: red;
 
   --page_border_thickness: 2px;
-  --page_border_color: black;
+  --page_border_color: #120000;
 
   --page_transtion_speed: 3s;
 

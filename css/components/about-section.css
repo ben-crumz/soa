@@ -27,7 +27,7 @@
   height: fit-content;
   border: solid var(--border_thickness) var(--border_color);
 
-  --border_color: black;
+  --border_color: var(--page_color);
   --border_thickness: 1px;
   --decoration_height: 25px;
   --decoration_width: 15px;
@@ -35,7 +35,7 @@
 
 .about-section span:has(img)::before,
 .about-section div:has(img)::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: calc(0px - var(--decoration_height));
   left: calc(0px - var(--decoration_width));
@@ -49,7 +49,7 @@
 
 .about-section span:has(img)::after,
 .about-section div:has(img)::after {
-  content: "";
+  content: '';
   position: absolute;
   top: calc(0px - var(--decoration_height));
   right: calc(0px - var(--decoration_width));

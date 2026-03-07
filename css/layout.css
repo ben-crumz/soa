@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Grandiflora+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Young+Serif&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Young+Serif&display=swap');
 
 h1 {
   /* Fixes vertical alignment in header */
@@ -21,9 +21,9 @@ h2 {
   grid-template-columns: 4rem auto 4rem;
   grid-template-rows: 4rem auto 6rem;
   grid-template-areas:
-    "b a e"
-    "b c e"
-    "b d e";
+    'b a e'
+    'b c e'
+    'b d e';
 }
 
 #header {
@@ -67,13 +67,13 @@ h2 {
 /* Heading */
 /* Adds border to footer corners on large screens */
 #header::before {
-  content: "";
+  content: '';
   position: absolute;
   top: calc(4rem - var(--page_border_thickness));
   left: 0;
   width: 100%;
   border-bottom: solid var(--page_border_thickness) var(--page_border_color);
-  background-color: black;
+  background-color: var(--page_border_color);
 }
 
 #nav--desktop {
@@ -138,7 +138,7 @@ h2 {
 }
 
 .header-link::before {
-  content: "";
+  content: '';
   position: relative;
   left: calc(95% - 20px);
   bottom: -1rem;
@@ -148,7 +148,7 @@ h2 {
 }
 
 .header-link::after {
-  content: "";
+  content: '';
   position: relative;
   left: -4px;
   bottom: 2px;
@@ -182,13 +182,13 @@ h2 {
 
 /* Adds border to footer corners on large screens */
 #footer::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: calc(6rem - var(--page_border_thickness));
   left: 0;
   width: 100%;
   border-bottom: solid var(--page_border_thickness) var(--page_border_color);
-  background-color: black;
+  background-color: var(--page_border_color);
 }
 
 .footer-nav--mobile {
@@ -218,9 +218,9 @@ h2 {
     grid-template-columns: 4rem auto;
     grid-template-rows: 4rem auto 6rem;
     grid-template-areas:
-      "a a"
-      "b c"
-      "d d";
+      'a a'
+      'b c'
+      'd d';
   }
 
   #header::before,
