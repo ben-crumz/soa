@@ -90,7 +90,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+  row-gap: 0.5rem;
 }
 
 .icon-link-list a {

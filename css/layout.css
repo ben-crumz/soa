@@ -19,7 +19,7 @@ h2 {
   max-width: 1920px;
   display: grid;
   grid-template-columns: 4rem auto 4rem;
-  grid-template-rows: 4rem auto 6rem;
+  grid-template-rows: 4rem auto 4.5rem;
   grid-template-areas:
     'b a e'
     'b c e'
@@ -180,11 +180,14 @@ h2 {
   align-content: center;
 }
 
+#footer svg {
+  width: 20px;
+}
 /* Adds border to footer corners on large screens */
 #footer::before {
   content: '';
   position: absolute;
-  bottom: calc(6rem - var(--page_border_thickness));
+  bottom: calc(4.5rem - var(--page_border_thickness));
   left: 0;
   width: 100%;
   border-bottom: solid var(--page_border_thickness) var(--page_border_color);
