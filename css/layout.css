@@ -226,6 +226,11 @@ h2 {
       'd d';
   }
 
+  #header {
+    border-block-end: solid var(--page_border_thickness)
+      var(--page_border_color);
+  }
+
   #header::before,
   #footer::before {
     display: none;
