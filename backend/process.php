@@ -1,5 +1,5 @@
 <?php
-require_once './db.php';
+require_once '../db.php';
 
 // Get data
 $data = file_get_contents('php://input');
